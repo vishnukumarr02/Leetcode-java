@@ -1,0 +1,22 @@
+import java.util.*;
+class Main{
+    static int gcd(int a,int b){
+        if(a==b)return a;
+        if(a==0&&b!=0)return b;
+        if(a!=0&&b==0)return a;
+        if(a>b){return gcd(a%b,b);}
+        else{ return gcd(a,b%a);}
+    }
+    static int lcm(int a,int b){
+        return (a*b)/gcd(a,b);
+    }
+    public static void main(String[] args){
+        Scanner ab=new Scanner(System.in);
+        int a=ab.nextInt();
+        int b=ab.nextInt();
+        int res=gcd(a,b);
+        int res1=lcm(a,b);
+        System.out.println("gcd :"+res);
+        System.out.print("lcm :"+res1);
+    }
+}
