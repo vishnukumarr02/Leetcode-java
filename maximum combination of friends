@@ -1,0 +1,17 @@
+import java.util.*;
+class Main{
+    static int rec(int a){
+        if(a==0)return 1;
+        return a*rec(a-1);
+    }
+    public static void main(String[] args){
+        Scanner ab=new Scanner(System.in);
+        int a=ab.nextInt();
+        int teams=ab.nextInt();
+        if(a==teams)System.out.print(1);
+        else{
+        a=a-teams+1;
+        int res=rec(a)/(2*rec(a-2));
+        System.out.print(res);}
+    }
+}
