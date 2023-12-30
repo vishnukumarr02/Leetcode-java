@@ -1,0 +1,17 @@
+class Solution {
+    static int gcd(int a,int b){
+        if(a==b)return a;
+        if(a!=0&&b==0)return a;
+        if(a==0&&b!=0)return b;
+        if(a>b){return gcd(a%b,b);}
+        else{return gcd(a,b%a);}
+    }
+    public boolean isGoodArray(int[] nums) {
+        int hcf=0;
+	for(int i=0;i<nums.length;i++){
+         hcf=gcd(hcf,nums[i]);
+         if(hcf==1)return true;
+    }
+    return false;
+    }
+}
