@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>The game is to take a number between 1 to 100 and you need to guess the number within 10 attempts</p>
+    <p>Enter the value: <input id="num" type="number"> <button onclick="MyFunction()">CHECK</button></p>
+    <p id="guessings">Previous guess: </p>
+    <p id="alert"></p>
+    <p id="result"></p>
+    
+</body>
+<script>
+    let count=0;
+      num=Math.floor(Math.random() * 100) + 1;
+    function MyFunction(){
+        if(count>10){
+            alert("Chances are done");
+        }
+        else{
+            count=count+1;
+            var val=document.getElementById("num").value;
+            document.getElementById("guessings").innerHTML+=val+" ";
+            if(val>num){
+                document.getElementById("alert").innerHTML="Wrong";
+                document.getElementById("alert").style.backgroundColor="red";
+                document.getElementById("result").innerHTML="Guessed value is greater than the answer";
+            }
+            else if(val<num){
+                document.getElementById("alert").innerHTML="Wrong";
+                document.getElementById("alert").style.backgroundColor="red";
+                document.getElementById("result").innerHTML="Guessed value is lesser than the answer";
+
+            }
+            else{
+                document.getElementById("alert").innerHTML="Correct";
+                document.getElementById("alert").style.backgroundColor="green";
+                document.getElementById("result").innerHTML="Correct value is"+" "+num;
+                document.getElementById("num").disabled=true;
+            }
+        }
+    }
+</script>
+</html>
