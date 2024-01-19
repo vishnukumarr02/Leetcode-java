@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int a=6,b=11;
+		int k=0,f1=1,f2=1;
+		char arr1[]=new char[a+b];
+		if(a>b){Arrays.fill(arr1,'B');k=b;f1=0;}
+		if(a<b){Arrays.fill(arr1,'G');k=a;f2=0;}
+		int i=0;
+	while(k!=0){
+	    if(f1==0)arr1[2*i]='G';
+	    if(f2==0)arr1[2*i]='B';
+	    i++;
+	    k--;
+	}
+	for(char c:arr1){
+	    System.out.print(c);
+	}
+	}
+}
